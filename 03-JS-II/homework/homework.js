@@ -117,15 +117,20 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  //
   
   if(num1 === 0 || num2 === 0 || num3 === 0){return "Error"}
-  
-  if(num1 > num2   &&   num1 > num3   &&   num1 > 0) {
-    return 'Número 1 es mayor y positivo'}
-  if(num1 < 0  ||  num2 < 0  ||  num2 < 0) {
-  return 'Hay negativos'}
-  if(num3 > num1  &&  num3 > num2){num3++} {return num3} 
-    //27
+  else 
+      if(num1 < 0  ||  num2 < 0  ||  num3 < 0) {
+  return( 'Hay negativos') }
+      else 
+        if(num1 > num2   &&   num1 > num3   &&   num1 > 0) {
+    return( 'Número 1 es mayor y positivo')}
+        else 
+          if(num3 > num1  &&  num3 > num2){num3++; return( num3 )}
+  else return(false)
+    //27 revisar
+
 }
 
 function esPrimo(numero) {
@@ -135,8 +140,12 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   
-  //whats
-
+  //
+  if (numero == 0 || numero == 1 || numero == 4) return false;
+  for (let i = 2; i < numero ; i++) {
+    if (numero % i == 0) return false;
+  }
+  return true
 }
 
 function esVerdadero(valor){
@@ -151,8 +160,13 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  for (var i=0; i<=10; i++){return (6 * i)}
-
+  let container = [];
+  let j = 0;
+  for (let i=0; i<=10; i++) {
+    j = i * 6;
+    container.push(j)
+  }
+  return(container)
   
 }
 
@@ -167,15 +181,18 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+
+  //numero *=5
+  //container = container + numero
+
+  let container = [];
+  let i = numero;
+  do{
+    i = i+5;
+    container = container + i;
+  } while (i <= numero+35)
+  return (i);
   
-
-
-    do{
-      numero + ;
-    } while (numero <60);
-    
-    console.log(numero)
-
 }
 
 
